@@ -1,0 +1,163 @@
+.processContainer {
+    background-color: #0d0d0d;
+    min-height: 100vh;
+    color: #e2e2e2;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 80px;
+}
+
+.heroSection {
+    text-align: center;
+    padding: 120px 20px 60px 20px;
+    background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(13,13,13,1) 100%);
+    border-bottom: 1px solid #222;
+}
+
+.heroHeadline {
+    font-size: 3.5rem;
+    font-weight: 900;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heroHeadlineRed {
+    color: #ff5540;
+}
+
+.heroText {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #aaa;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Timeline/Card Grid */
+.roadmapGrid {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.phaseCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 40px;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.phaseCard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 85, 64, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.phaseNumber {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    background: #ff5540;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding: 5px 20px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(255, 85, 64, 0.3);
+}
+
+.phaseTitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.phaseContent {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #ccc;
+}
+
+.phaseContent ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.phaseContent li {
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #00ccff;
+    font-weight: 700;
+}
+
+/* Warning / Notice Box */
+.warningBox {
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    background: rgba(255, 189, 0, 0.05);
+    border-left: 4px solid #ffbd00;
+    padding: 30px;
+    border-radius: 0 8px 8px 0;
+}
+
+.warningTitle {
+    color: #ffbd00;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.warningText {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* CTA */
+.ctaWrapper {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.ctaButton {
+    background: #ff5540;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 18px 40px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border-radius: 4px;
+}
+
+.ctaButton:hover {
+    background: #ff331a;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .heroHeadline { font-size: 2.5rem; }
+    .phaseCard { padding: 30px 20px; }
+    .phaseNumber { left: 20px; font-size: 1.2rem; padding: 5px 15px; }
+    .phaseTitle { font-size: 1.5rem; }
+}

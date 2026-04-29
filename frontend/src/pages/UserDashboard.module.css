@@ -1,0 +1,322 @@
+/* Base Layout */
+.container {
+    min-height: 100dvh; /* Mobile viewport standard */
+    background-color: #0a0a0a;
+    font-family: 'Inter', sans-serif;
+    color: #e2e2e2;
+    padding-top: 100px; /* Generous space for fixed navbar */
+    padding-bottom: 50px;
+}
+
+/* Loader Authentication Phase */
+.loaderContainer {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a0a;
+}
+.loaderText {
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #1a1a1a;
+    border-top: 4px solid #ff5540;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Header & Controls */
+.header {
+    background: #111;
+    padding: 20px;
+    border-bottom: 1px solid #2a2a2a;
+    text-align: center;
+}
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    font-weight: 900;
+    color: #ff5540;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+.subtitle {
+    font-size: 10px;
+    color: #666;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+/* Horizontal Scroll Selectors */
+.weekSelectorBar {
+    display: flex;
+    overflow-x: auto;
+    background: #111;
+    padding: 15px 20px;
+    gap: 15px;
+    border-bottom: 1px solid #2a2a2a;
+    scroll-behavior: smooth;
+}
+.weekSelectorBar::-webkit-scrollbar { display: none; }
+.weekBtn {
+    background: transparent;
+    border: 1px solid #333;
+    color: #888;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    white-space: nowrap;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+.weekBtnActive {
+    border-color: #ff5540;
+    color: #ff5540;
+    background: rgba(255, 85, 64, 0.1);
+}
+
+.daySelectorBar {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 20px;
+    scroll-behavior: smooth;
+    margin-bottom: 10px;
+}
+.daySelectorBar::-webkit-scrollbar { display: none; }
+.dayBtn {
+    background: transparent;
+    border: none;
+    color: #555;
+    font-weight: 900;
+    font-size: 1.2rem;
+    cursor: pointer;
+    white-space: nowrap;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.2s;
+}
+.dayBtnActive {
+    color: #fff;
+}
+.dayBtnActive::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ff5540;
+}
+
+/* Exercises Stream */
+.exercisesContainer {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.cardTitle {
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    border-bottom: 1px solid #2a2a2a;
+    text-transform: uppercase;
+}
+
+.videoBox {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+.videoBox iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.protocolGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+}
+.protocolItem {
+    padding: 15px 10px;
+    text-align: center;
+    border-right: 1px solid #2a2a2a;
+}
+.protocolItem:last-child { border-right: none; }
+
+.protocolLabel {
+    font-size: 9px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+}
+.protocolValue {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #ff5540;
+}
+
+.notesBox {
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.5;
+    background: rgba(255, 85, 64, 0.03);
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.logBtn {
+    width: 100%;
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    font-weight: 900;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: 0.2s;
+}
+.logBtn:hover {
+    background: #ff5540;
+    color: #000;
+}
+
+/* Absolute Drawer (Mobile Native Feel) */
+.drawerOverlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100dvh;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.drawerOverlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.drawer {
+    background: #111;
+    border-top: 2px solid #ff5540;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 70dvh;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+.drawerOverlay.active .drawer {
+    transform: translateY(0);
+}
+
+.drawerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.drawerTitle {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #fff;
+}
+.closeDrawerBtn {
+    background: #222;
+    border: none;
+    color: #ff5540;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.logInputsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.logRow {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.setIndic {
+    font-size: 14px;
+    color: #888;
+    font-weight: 900;
+}
+.logInput {
+    flex: 1;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 900;
+    outline: none;
+}
+.logInput:focus {
+    border-color: #ff5540;
+}
+
+.logSubmitBtn {
+    background: #ff5540;
+    color: #000;
+    border: none;
+    padding: 20px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+}

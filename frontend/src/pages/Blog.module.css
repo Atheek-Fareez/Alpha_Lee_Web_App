@@ -1,0 +1,155 @@
+.container {
+    min-height: 100dvh;
+    background: radial-gradient(circle at top center, #161616 0%, #030303 100%);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.header {
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 900;
+    margin: 0 0 15px 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    color: #666;
+    letter-spacing: 0.3em;
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+.filterBar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.filterBtn {
+    background: transparent;
+    border: 1px solid #333;
+    color: #666;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.filterBtn:hover, .activeFilter {
+    border-color: #ff5540;
+    color: #fff;
+}
+
+.activeFilter {
+    background: rgba(255, 85, 64, 0.1);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 5%;
+    padding-bottom: 100px;
+}
+
+.card {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.imageBox {
+    width: 100%;
+    aspect-ratio: 16/10;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #1a1a1a;
+    transition: border-color 0.4s;
+}
+
+.card:hover .imageBox {
+    border-color: #ff5540;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.8s filter, 0.8s transform;
+    filter: grayscale(80%) brightness(0.8);
+}
+
+.card:hover .image {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.05);
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-weight: 900;
+    letter-spacing: 0.5em;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.categoryBadge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #ff5540;
+    color: #000;
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.cardBody {
+    padding: 0 10px;
+}
+
+.cardTitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0 0 15px 0;
+    font-weight: 900;
+    transition: 0.3s color;
+}
+
+.card:hover .cardTitle {
+    color: #ff5540;
+}
+
+.cardMeta {
+    display: flex;
+    gap: 15px;
+    color: #666;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}

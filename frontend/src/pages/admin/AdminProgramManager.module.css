@@ -1,0 +1,360 @@
+.container {
+    padding: 100px 5% 50px 5%;
+    min-height: 100vh;
+    background-color: #131313;
+    font-family: 'Inter', sans-serif;
+    color: #e2e2e2;
+}
+
+.header {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.tabContainer {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #2a2a2a;
+    padding-bottom: 10px;
+}
+
+.tabBtn {
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 1rem;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+    padding: 10px 0;
+}
+
+.tabBtn:hover {
+    color: #fff;
+}
+
+.activeTab {
+    color: #ff5540;
+    border-bottom: 3px solid #ff5540;
+}
+
+/* Base Form Grid */
+.formGrid {
+    background: #1b1b1b;
+    border: 1px solid #2a2a2a;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 10px;
+    color: #ff5540;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.input, .select {
+    background: #131313;
+    border: 1px solid #2a2a2a;
+    color: #fff;
+    padding: 15px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: 0.2s;
+    width: 100%;
+}
+
+.input:focus, .select:focus {
+    border-color: #ff5540;
+}
+
+/* OTP Access Field */
+.otpGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.otpBtn {
+    background: #ff5540;
+    color: #000;
+    border: none;
+    padding: 0 20px;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.otpBtn:hover {
+    background: #fff;
+}
+
+/* -------------------------------------------
+   WORKOUT ARCHITECT MODULE 
+--------------------------------------------- */
+.builderSection {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    border-top: 2px dashed #ff5540;
+    padding-top: 40px;
+    background: transparent;
+}
+
+.builderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.builderHeader h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    color: #ff5540;
+    margin: 0;
+}
+
+.addBtn {
+    background: #131313;
+    border: 1px solid #ff5540;
+    color: #ff5540;
+    padding: 10px 20px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.addBtn:hover {
+    background: #ff5540;
+    color: #000;
+}
+
+.sessionBox {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    padding: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sessionHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cloneBtn {
+    background: #333;
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 11px;
+}
+.cloneBtn:hover {
+    background: #555;
+}
+
+/* Exercises Mapping */
+.exercisesList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.exerciseRow {
+    background: #1b1b1b;
+    border-left: 3px solid #666;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s;
+}
+.exerciseRow:hover {
+    border-color: #ff5540;
+}
+
+.exTopRow {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.videoIcon {
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.videoIcon:hover { transform: scale(1.1); }
+
+.exControls {
+    display: flex;
+    gap: 5px;
+    margin-left: auto;
+}
+.exControls button {
+    background: #222;
+    border: 1px solid #333;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 900;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+.exControls button:hover {
+    background: #ff5540;
+    border-color: #ff5540;
+    color: #000;
+}
+.removeExBtn { background: #3a1a1a !important; color: #ff5540 !important; }
+
+.exParamsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.inputSmall {
+    background: #131313;
+    border: 1px solid #2a2a2a;
+    color: #fff;
+    padding: 10px;
+    font-size: 0.85rem;
+    outline: none;
+    text-align: center;
+}
+.inputSmall:focus { border-color: #ff5540; }
+
+.addExBtn {
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    color: #666;
+    font-weight: 900;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.addExBtn:hover { color: #fff; }
+
+/* Global Deploy Actions */
+.submitBtn, .cancelBtn {
+    grid-column: 1 / -1;
+    background: #ff5540;
+    color: #000;
+    border: none;
+    padding: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: 0.2s;
+    margin-top: 20px;
+}
+
+.submitBtn:hover {
+    background: #fff;
+}
+
+.cancelBtn {
+    background: transparent;
+    color: #ff5540;
+    border: 1px solid #ff5540;
+    margin-top: 0;
+}
+.cancelBtn:hover {
+    background: #3a1a1a;
+}
+
+/* Data Table Below */
+.tableContainer {
+    background: #1b1b1b;
+    border: 1px solid #2a2a2a;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.th {
+    background: #131313;
+    color: #ff5540;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 20px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.td {
+    padding: 20px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.actionBtn {
+    background: #131313;
+    border: 1px solid #2a2a2a;
+    color: #fff;
+    padding: 8px 15px;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+
+.actionBtn:hover {
+    background: #e2e2e2;
+    color: #000;
+}
+
+.deleteBtn {
+    border-color: #ff5540;
+    color: #ff5540;
+}
+
+.deleteBtn:hover {
+    background: #ff5540;
+}
+
+@media (max-width: 768px) {
+    .builderHeader { flex-direction: column; gap: 15px; align-items: flex-start; }
+    .sessionHeader { flex-direction: column; }
+    .exTopRow { flex-direction: column; align-items: stretch; }
+}

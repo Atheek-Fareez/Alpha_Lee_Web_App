@@ -1,0 +1,228 @@
+.container {
+    background-color: #0a0a0a;
+    min-height: 100vh;
+    padding: 120px 20px 60px 20px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    border-bottom: 1px solid #222;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: -0.05em;
+}
+
+.filterGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.filterBtn {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #666;
+    padding: 8px 15px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filterBtn:hover {
+    color: #fff;
+    border-color: #555;
+}
+
+.activeFilter {
+    background: #ff5540;
+    color: #000;
+    border-color: #ff5540;
+}
+
+.feedbackGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #333;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.userName {
+    font-weight: 900;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.userEmail {
+    font-size: 0.75rem;
+    color: #555;
+}
+
+.statusBadge {
+    font-size: 0.6rem;
+    font-weight: 900;
+    padding: 4px 8px;
+    background: #222;
+    border-radius: 2px;
+}
+
+.pending .statusBadge { color: #ffab00; background: rgba(255, 171, 0, 0.1); }
+.approved .statusBadge { color: #00c853; background: rgba(0, 200, 83, 0.1); }
+.rejected .statusBadge { color: #ff5540; background: rgba(255, 85, 64, 0.1); }
+
+.ratingRow {
+    color: #ffab00;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    color: #444;
+    font-size: 0.7rem;
+}
+
+.comment {
+    color: #888;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.actionRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+}
+
+.mainActions {
+    display: flex;
+    gap: 10px;
+}
+
+.approveBtn, .rejectBtn {
+    border: none;
+    padding: 8px 15px;
+    font-weight: 900;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.approveBtn { background: #00c853; color: #000; }
+.rejectBtn { background: #ff5540; color: #fff; }
+
+.approveBtn:hover, .rejectBtn:hover { opacity: 0.8; }
+
+.featureToggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.featureLabel {
+    font-size: 0.65rem;
+    font-weight: 900;
+    color: #444;
+}
+
+.loading, .noData {
+    text-align: center;
+    margin-top: 100px;
+    color: #ff5540;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+}
+
+/* Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ff5540;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ff5540;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}

@@ -1,0 +1,247 @@
+/* Navbar.module.css */
+.navContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Default: transparent at top of page */
+    background-color: rgba(10, 10, 10, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-sizing: border-box;
+    transition: background-color 0.4s ease,
+                border-color 0.4s ease,
+                backdrop-filter 0.4s ease,
+                padding 0.3s ease,
+                box-shadow 0.4s ease;
+}
+
+/* Scrolled state: rich glassmorphism */
+.navScrolled {
+    background-color: rgba(13, 13, 13, 0.88);
+    border-bottom: 1px solid rgba(255, 85, 64, 0.2);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 0.85rem 5%;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #e2e2e2;
+    text-decoration: none;
+    font-style: italic;
+    letter-spacing: -0.05em;
+    z-index: 1002; /* ensure logo stays above mobile-menu */
+}
+
+.logoAccent {
+    color: #ff5540; /* alpha-red */
+}
+
+.navLinks {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.link {
+    color: #e2e2e2;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.link:hover {
+    color: #ff5540;
+}
+
+.activeLink {
+    color: #ff5540 !important;
+}
+
+.lockerLink {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    border-bottom: 2px solid transparent;
+}
+.lockerLink:hover {
+    color: #ff5540;
+    border-bottom: 2px solid #ff5540;
+}
+
+.navBtn {
+    background-color: #ff5540;
+    color: #000;
+    padding: 8px 16px;
+    margin-left: 10px;
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    min-height: 44px; /* Hit area padding */
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.navBtn:hover {
+    background-color: #fff;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1002; /* stays above menu overlay */
+    min-width: 44px; /* hit area */
+    min-height: 44px; /* hit area */
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background: #e2e2e2;
+    transition: all 0.3s linear;
+    transform-origin: 1px;
+}
+
+.line.open:nth-child(1) {
+    transform: rotate(45deg);
+    background: #ff5540;
+}
+
+.line.open:nth-child(2) {
+    opacity: 0;
+}
+
+.line.open:nth-child(3) {
+    transform: rotate(-45deg);
+    background: #ff5540;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 1024px) {
+    .navLinks {
+        display: none; /* Hides desktop links on mobile */
+    }
+
+    .navContainer {
+        padding: 1rem 20px;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobileMenu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100dvh;
+        background-color: rgba(19, 19, 19, 0.98);
+        padding-top: 100px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .mobileMenuOpen {
+        transform: translateY(0);
+    }
+
+    .mobileLink {
+        color: #e2e2e2;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 20px;
+        text-align: center;
+        min-height: 44px;
+        display: block;
+    }
+
+    .mobileLink:hover {
+        color: #ff5540;
+    }
+
+    .mobileLockerLink {
+        font-family: 'Space Grotesk', sans-serif;
+        color: #ff5540;
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 20px;
+        text-align: center;
+        min-height: 44px;
+        display: block;
+        transition: 0.2s;
+    }
+    .mobileLockerLink:hover {
+        color: #fff;
+    }
+
+    .menuDivider {
+        width: 50%;
+        margin: 20px auto;
+        border: none;
+        border-top: 2px solid #2a2a2a;
+    }
+
+    .mobileNavBtn {
+        background-color: #ff5540;
+        color: #000;
+        padding: 15px;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 300px;
+        font-weight: 900;
+        font-size: 1rem;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        min-height: 44px;
+        display: block; /* So hit area works like link block */
+    }
+}

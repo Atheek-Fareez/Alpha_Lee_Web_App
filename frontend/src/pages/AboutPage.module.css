@@ -1,0 +1,197 @@
+.container {
+    background-color: #111;
+    min-height: 100vh;
+    color: white;
+    padding-top: 100px; /* Space for navbar */
+    padding-bottom: 50px;
+    font-family: 'Inter', sans-serif;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 15px 0;
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ff5540;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.storyCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: 1.8;
+}
+
+.storyHeader {
+    color: #00ccff;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.valueBox {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid #ff5540;
+    transition: transform 0.3s ease;
+}
+
+.valueBox:hover {
+    transform: translateY(-5px);
+    border-left: 4px solid #00ccff;
+}
+
+.valueTitle {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.valueDesc {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.teamGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.teamCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.teamName {
+    color: #00ccff;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.teamRole {
+    color: #ff5540;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.formBox {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    margin-top: 50px;
+}
+
+.formGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    color: #ff5540;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.input {
+    padding: 12px;
+    background: #111;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: #00ccff;
+}
+
+.textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submitBtn {
+    background: #ff5540;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.submitBtn:hover {
+    background: #ff3311;
+}
+
+.submitBtn:disabled {
+    background: #444;
+    cursor: not-allowed;
+}

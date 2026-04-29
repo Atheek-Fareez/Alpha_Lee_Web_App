@@ -1,0 +1,181 @@
+.container {
+    min-height: 100dvh;
+    background: radial-gradient(circle at top center, #161616 0%, #030303 100%);
+    color: #e2e2e2;
+    font-family: 'Inter', sans-serif;
+    padding-top: 80px; /* Space for fixed navbar */
+    padding-bottom: 100px;
+}
+
+.header {
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive sizing */
+    font-weight: 900;
+    margin: 0 0 15px 0; /* Added bottom margin */
+    line-height: 1.1; /* Explicit line height */
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.subtitle {
+    color: #666;
+    letter-spacing: 0.3em;
+    font-size: 0.9rem;
+    margin-top: 0; /* Margin handled by title */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5% 80px;
+}
+
+.card {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+.card:hover { border-color: #ff5540; transform: translateY(-5px); }
+.card[data-active="true"] { border-color: #ff5540; background: #111; }
+
+.pkgType {
+    background: #111;
+    color: #ff5540;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid #222;
+}
+
+.pkgTitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 0 15px 0;
+}
+
+.pkgPrice {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0 0 20px 0;
+}
+.pkgPrice span { font-size: 1rem; color: #666; }
+
+.pkgDesc {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.selectBtn {
+    background: transparent;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+.card:hover .selectBtn, .card[data-active="true"] .selectBtn {
+    background: #ff5540;
+    border-color: #ff5540;
+    color: #000;
+}
+
+.intakeSection {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    padding: 40px;
+    border-radius: 8px;
+}
+.intakeTitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.label {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.input {
+    background: #111;
+    border: 1px solid #222;
+    color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    font-size: 1rem;
+}
+.input:focus { border-color: #ff5540; }
+
+.whatsappWrapper {
+    display: flex;
+}
+.prefix {
+    background: #1a1a1a;
+    border: 1px solid #222;
+    color: #888;
+    padding: 15px;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+    font-weight: 900;
+}
+.waInput {
+    flex: 1;
+    border-radius: 0 4px 4px 0;
+}
+
+.submitBtn {
+    width: 100%;
+    background: #ff5540;
+    color: #000;
+    border: none;
+    padding: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+.submitBtn:hover {
+    background: #fff;
+}
+.submitBtn:disabled { background: #333; color: #666; cursor: not-allowed; }

@@ -1,0 +1,309 @@
+/* ══════════════════════════════════════════
+   PROGRAMS HERO BANNER
+══════════════════════════════════════════ */
+.programsHero {
+    width: 100%;
+    height: 480px; /* Increased height to accommodate padding */
+    padding-top: 80px;
+    overflow: hidden;
+    border-bottom: 2px solid #ff5540;
+    background-color: #0a0a0a;
+    display: flex;
+    align-items: stretch;
+}
+
+/* Left column — text */
+.heroLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 4% 40px 6%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Right column — emblem */
+.heroRight {
+    flex: 0 0 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+}
+
+.heroImage {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    filter: drop-shadow(0 0 35px rgba(255, 85, 64, 0.4));
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 22px;
+}
+
+.breadcrumbs a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+    color: #ff5540;
+}
+
+.breadcrumbSep {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+}
+
+/* Main headline */
+.heroHeadline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.05;
+    margin: 0 0 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #999999 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 20px rgba(255, 85, 64, 0.3));
+}
+
+/* Subtitle */
+.heroSub {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.35);
+    margin: 0 0 28px;
+}
+
+/* Red accent divider */
+.heroDivider {
+    width: 55px;
+    height: 2px;
+    background: #ff5540;
+    margin-bottom: 18px;
+    border-radius: 2px;
+}
+
+/* Brand tag */
+.heroBrand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #ff5540;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .heroRight {
+        flex: 0 0 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .programsHero {
+        height: auto;
+        min-height: 320px;
+        flex-direction: column-reverse;
+    }
+    .heroRight {
+        flex: 0 0 180px;
+        width: 100%;
+    }
+    .heroLeft {
+        padding: 28px 6% 20px;
+    }
+    .heroHeadline {
+        font-size: clamp(1.6rem, 7vw, 2.4rem);
+    }
+}
+
+/* ══════════════════════════════════════════
+   MAIN CONTAINER
+══════════════════════════════════════════ */
+.container {
+    background-color: #131313;
+    min-height: 100dvh;
+    padding: 60px 5% 50px 5%;
+    color: #e2e2e2;
+    font-family: 'Inter', sans-serif;
+}
+
+.headerContainer {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.subheadline {
+    color: #666;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background-color: #1b1b1b;
+    border: 1px solid #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    cursor: default;
+}
+
+/* Elite Hover Animations */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 85, 64, 0.1);
+    border-color: rgba(255, 85, 64, 0.5);
+}
+
+.imgWrapper {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(40%);
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.6s ease;
+}
+
+.card:hover .img {
+    transform: scale(1.05); /* Subtle zoom */
+    filter: grayscale(0%);
+}
+
+.imgOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #1b1b1b 0%, transparent 100%);
+}
+
+.content {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.goalBadge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff5540;
+    color: #000;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.metaRow {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.metaItem {
+    font-size: 10px;
+    color: #666;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.priceWrapper {
+    margin-bottom: 30px;
+}
+
+.originalPrice {
+    text-decoration: line-through;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.activePrice {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.ctaBtn {
+    margin-top: auto;
+    width: 100%;
+    background-color: transparent;
+    color: #ff5540;
+    border: 2px solid #ff5540;
+    padding: 15px;
+    font-weight: 900;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.ctaBtn:hover {
+    background-color: #ff5540;
+    color: #000;
+}

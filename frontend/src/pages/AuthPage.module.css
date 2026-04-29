@@ -1,0 +1,240 @@
+.authContainer {
+    display: flex;
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.infoSection {
+    flex: 1;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    border-right: 1px solid #1a1a1a;
+}
+
+.infoContent {
+    max-width: 600px;
+}
+
+.mainTitle {
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+}
+
+.accent {
+    color: #ff5540;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: #666;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.featureBox {
+    border-left: 4px solid #ff5540;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.featureTitle {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #ff5540;
+}
+
+.featureText {
+    font-size: 1rem;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.statValue {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.statLabel {
+    font-size: 0.7rem;
+    color: #666;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.formSection {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
+
+.formBox {
+    width: 100%;
+    max-width: 450px;
+}
+
+.formHeader {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.formSubtext {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+}
+
+.errorMessage {
+    background-color: rgba(255, 85, 64, 0.1);
+    color: #ff5540;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-left: 3px solid #ff5540;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nameRow {
+    display: flex;
+    gap: 15px;
+}
+
+.inputField {
+    background-color: #111;
+    border: 1px solid #222;
+    padding: 15px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.inputField:focus {
+    border-color: #ff5540;
+}
+
+.roleSelection {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.roleLabel {
+    font-size: 0.7rem;
+    color: #666;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.radioGroup {
+    display: flex;
+    gap: 20px;
+}
+
+.radioItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #aaa;
+}
+
+.radioItem input {
+    accent-color: #ff5540;
+}
+
+.radioItem:hover {
+    color: #fff;
+}
+
+.submitButton {
+    background-color: #ff5540;
+    color: #000;
+    border: none;
+    padding: 20px;
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 10px;
+}
+
+.submitButton:hover {
+    background-color: #ff7766;
+    transform: translateY(-2px);
+}
+
+.toggleText {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 700;
+}
+
+.toggleButton {
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+@media (max-width: 968px) {
+    .authContainer {
+        flex-direction: column;
+    }
+    .infoSection {
+        padding: 40px;
+        min-height: 40vh;
+    }
+    .mainTitle {
+        font-size: 3rem;
+    }
+    .formSection {
+        padding: 40px;
+    }
+}

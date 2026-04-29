@@ -1,0 +1,72 @@
+.container {
+    background-color: #0a0a0a;
+    min-height: 100vh;
+    padding: 120px 20px 60px 20px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    border-bottom: 1px solid #222;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: -0.05em;
+}
+
+.backBtn {
+    background: transparent;
+    border: 1px solid #444;
+    color: #888;
+    padding: 8px 15px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.backBtn:hover {
+    color: #fff;
+    border-color: #ff5540;
+}
+
+.statusLegend {
+    display: flex;
+    gap: 20px;
+    background: #111;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid #222;
+}
+
+.legendItem {
+    font-size: 0.65rem;
+    font-weight: 900;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.mainGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
