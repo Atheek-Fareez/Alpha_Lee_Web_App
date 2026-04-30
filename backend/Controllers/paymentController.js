@@ -1,4 +1,4 @@
-import Payment from '../models/Payment.js';
+import Payment from '../Models/Payment.js';
 import User from '../Models/User.js';
 
 // @desc    Submit a payment
