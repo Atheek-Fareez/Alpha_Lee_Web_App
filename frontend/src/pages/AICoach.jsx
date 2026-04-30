@@ -40,7 +40,7 @@ const AICoach = () => {
         setChatHistory([]); // Clear chat for new plan
 
         try {
-            const response = await fetch('http://localhost:3000/api/ai/predict-fitness', {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/ai/predict-fitness`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -73,7 +73,7 @@ const AICoach = () => {
         setIsChatting(true);
 
         try {
-            const response = await fetch('http://localhost:3000/api/ai/chat', {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/ai/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

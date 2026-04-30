@@ -20,7 +20,7 @@ const Home = () => {
     }, [isLoggedIn, role, userId, navigate]);
 
     useEffect(() => {
-        fetch('/api/feedback/featured')
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/feedback/featured`)
             .then(res => res.json())
             .then(data => { if(Array.isArray(data)) setTestimonials(data); })
             .catch(err => console.error("Feedback DB Offline", err));
@@ -131,26 +131,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 05. TESTIMONIALS */}
-            <section className={styles.sectionPadding} style={{ backgroundColor: '#050505' }}>
-                <span className={styles.sectionLabel}>COMMUNITY FEEDBACK</span>
-                <h2 className={styles.sectionTitle}>USER <span style={{color: '#ff5540'}}>VERIFICATION</span>.</h2>
-                <div className={styles.testimonialsGrid}>
-                    {testimonials.length > 0 ? (
-                        testimonials.map((f, idx) => (
-                            <div key={idx} className={styles.testimonialCard}>
-                                <p className={styles.testimonialText}>"{f.comment}"</p>
-                                <div className={styles.testimonialUser}>
-                                    <span className={styles.userName}>{f.userId?.firstName} {f.userId?.lastName}</span>
-                                    <span className={styles.stars}>{"★".repeat(f.rating)}</span>
-                                </div>
-                            </div>
-                        ))
-                    ) : (
-                        <div style={{color: '#444'}}>Gathering system data...</div>
-                    )}
-                </div>
-            </section>
+      
 
             {/* FINAL CTA */}
             <section className={styles.sectionPadding} style={{ textAlign: 'center', borderTop: '1px solid var(--border)' }}>

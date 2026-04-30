@@ -12,7 +12,7 @@ const AdminBlogManager = () => {
     const [modal, setModal] = useState({ isOpen: false, id: null, title: '' });
 
     const fetchBlogs = () => {
-        fetch('http://localhost:3000/api/blogs')
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/blogs`)
             .then(res => res.json())
             .then(data => setBlogs(data))
             .catch(err => console.error("Failed to fetch blog matrix:", err));
@@ -30,7 +30,7 @@ const AdminBlogManager = () => {
         if (!modal.id) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`http://localhost:3000/api/blogs/${modal.id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/blogs/${modal.id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });

@@ -12,7 +12,7 @@ const RecruitmentManager = () => {
     const fetchApplications = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('/api/recruitment/applications', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/recruitment/applications`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();
@@ -29,7 +29,7 @@ const RecruitmentManager = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`/api/recruitment/applications/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/recruitment/applications/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });

@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useContext } from 'react';
 // Force reload for feedback integration
 import Home from './pages/Home';
 import AuthPage from './pages/AuthPage';
-import Login from './pages/Login';
+import Login from './pages/login';
 import Register from './pages/Register';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminProgramManager from './pages/admin/AdminProgramManager';
@@ -30,7 +31,7 @@ import AdminFeedbackManager from './pages/admin/AdminFeedbackManager';
 import AdminSupportTerminal from './pages/admin/AdminSupportTerminal';
 import FeedbackPage from './pages/FeedbackPage';
 import FloatingFeedbackButton from './Components/FloatingFeedbackButton';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, AuthContext } from './context/AuthContext';
 import './App.css';
 
 const ProtectedAdminRoute = ({ children }) => {
@@ -40,6 +41,13 @@ const ProtectedAdminRoute = ({ children }) => {
         return <Navigate to="/login" replace />;
     }
     return children;
+};
+
+// Auth-gated wrapper — only renders the feedback button for logged-in users
+const AuthGatedFeedback = () => {
+    const { isLoggedIn } = useContext(AuthContext);
+    if (!isLoggedIn) return null;
+    return <FloatingFeedbackButton />;
 };
 
 function App() {
@@ -89,7 +97,7 @@ function App() {
         {/* FALLBACK */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      <FloatingFeedbackButton />
+      <AuthGatedFeedback />
     </Router>
     </AuthProvider>
   );

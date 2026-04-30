@@ -34,7 +34,7 @@ const UserDashboard = () => {
     const fetchLogs = async () => {
         if (!token) return;
         try {
-            const res = await fetch(`/api/logs/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/logs/${id}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (res.ok) {
@@ -49,7 +49,7 @@ const UserDashboard = () => {
     const fetchMyPayments = async () => {
         if (!token) return;
         try {
-            const res = await fetch('/api/payments/my-payments', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payments/my-payments`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (res.ok) {
@@ -71,7 +71,7 @@ const UserDashboard = () => {
             return;
         }
 
-        fetch(`/api/digital-programs/${id}`)
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/digital-programs/${id}`)
             .then(res => res.json())
             .then(data => {
                 if(data.message) {
@@ -97,7 +97,7 @@ const UserDashboard = () => {
                     });
 
                     Promise.all(Array.from(uniqueExerciseIds).map(exId => 
-                        fetch(`/api/logs/analytics/${exId}`, { headers: { 'Authorization': `Bearer ${token}` }})
+                        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/logs/analytics/${exId}`, { headers: { 'Authorization': `Bearer ${token}` }})
                             .then(r => r.ok ? r.json() : null)
                             .then(aData => ({ exId, aData }))
                     )).then(results => {
@@ -120,7 +120,7 @@ const UserDashboard = () => {
     const handleClaimProgram = async () => {
         // Run claim sequence after successful auth
         try {
-            await fetch('/api/users/claim', {
+            await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/users/claim`, {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -181,7 +181,7 @@ const UserDashboard = () => {
         }
 
         try {
-            const res = await fetch('/api/logs', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/logs`, {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -199,7 +199,7 @@ const UserDashboard = () => {
 
                 // Smart Overload Engine Hook
                 try {
-                    const analyticsUrl = `/api/logs/analytics/${activeExercise.exerciseId._id}`;
+                    const analyticsUrl = `${import.meta.env.VITE_API_BASE_URL}/api/logs/analytics/${activeExercise.exerciseId._id}`;
                     console.log('Fetching Analytics Data from:', analyticsUrl);
                     
                     const analyticsRes = await fetch(analyticsUrl, {

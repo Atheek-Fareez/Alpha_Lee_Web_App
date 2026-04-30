@@ -37,19 +37,19 @@ const AdminDashboard = () => {
             const headers = getAuthHeaders();
             
             // Fetch Leads
-            const leadRes = await fetch('/api/admin/leads', { headers });
+            const leadRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/leads`, { headers });
             if (leadRes.ok) setLeads(await leadRes.json());
 
             // Fetch Bookings
-            const bookRes = await fetch('/api/consultations/bookings', { headers });
+            const bookRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/consultations/bookings`, { headers });
             if (bookRes.ok) setBookings(await bookRes.json());
 
             // Fetch Feedback
-            const feedRes = await fetch('/api/feedback/admin', { headers });
+            const feedRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/feedback/admin`, { headers });
             if (feedRes.ok) setFeedbacks(await feedRes.json());
 
             // Fetch Tickets
-            const tickRes = await fetch('/api/support/admin', { headers });
+            const tickRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/support/admin`, { headers });
             if (tickRes.ok) setTickets(await tickRes.json());
 
         } catch (err) {
@@ -76,7 +76,7 @@ const AdminDashboard = () => {
     const confirmTermination = async () => {
         const { id } = modalConfig;
         try {
-            const res = await fetch(`/api/admin/leads/${id}`, { 
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/leads/${id}`, { 
                 method: 'DELETE',
                 headers: getAuthHeaders()
             });
@@ -89,7 +89,7 @@ const AdminDashboard = () => {
 
     const markConsultationContacted = async (id) => {
         try {
-            const res = await fetch(`/api/consultations/bookings/${id}/contacted`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/consultations/bookings/${id}/contacted`, {
                 method: 'PUT',
                 headers: getAuthHeaders()
             });

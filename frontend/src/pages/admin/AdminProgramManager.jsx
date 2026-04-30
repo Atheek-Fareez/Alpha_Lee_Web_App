@@ -35,15 +35,15 @@ const AdminProgramManager = () => {
     };
 
     const fetchAllData = () => {
-        fetch('/api/digital-programs')
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/digital-programs`)
             .then(res => res.json())
             .then(data => setDigitalPrograms(Array.isArray(data) ? data : []));
             
-        fetch('/api/coaching')
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/coaching`)
             .then(res => res.json())
             .then(data => setCoachingPackages(Array.isArray(data) ? data : []));
 
-        fetch('/api/exercises', { headers: getAuthHeaders() })
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/exercises`, { headers: getAuthHeaders() })
             .then(res => res.json())
             .then(data => setGlobalExercises(Array.isArray(data) ? data : []));
     };
@@ -140,7 +140,7 @@ const AdminProgramManager = () => {
         e.preventDefault();
         
         const isDigital = activeTab === 'digital';
-        const baseUrl = isDigital ? '/api/digital-programs' : '/api/coaching';
+        const baseUrl = isDigital ? `${import.meta.env.VITE_API_BASE_URL}/api/digital-programs` : `${import.meta.env.VITE_API_BASE_URL}/api/coaching`;
         const url = isEditing ? `${baseUrl}/${editingId}` : baseUrl;
         const method = isEditing ? 'PUT' : 'POST';
 
@@ -193,7 +193,7 @@ const AdminProgramManager = () => {
 
     const handleDelete = async (id, type) => {
         if(window.confirm("Permanently delete this entire model element?")) {
-            const baseUrl = type === 'digital' ? '/api/digital-programs' : '/api/coaching';
+            const baseUrl = type === 'digital' ? `${import.meta.env.VITE_API_BASE_URL}/api/digital-programs` : `${import.meta.env.VITE_API_BASE_URL}/api/coaching`;
             try {
                 const res = await fetch(`${baseUrl}/${id}`, { method: 'DELETE', headers: getAuthHeaders() });
                 if(res.ok) fetchAllData();

@@ -17,7 +17,7 @@ const Locker = () => {
 
         const fetchAllData = async () => {
             try {
-                const res = await fetch('/api/users/locker', { 
+                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/users/locker`, { 
                     headers: { 'Authorization': `Bearer ${token}` } 
                 });
                 

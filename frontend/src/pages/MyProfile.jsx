@@ -38,7 +38,7 @@ const MyProfile = () => {
             }
             try {
                 // Attempt to fetch from the generic user profile route
-                const res = await fetch('/api/users/profile', {
+                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/users/profile`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 if(res.ok) {
@@ -68,7 +68,7 @@ const MyProfile = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('/api/users/profile', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/users/profile`, {
                 method: 'PUT',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ const MyProfile = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('/api/users/change-password', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/users/change-password`, {
                 method: 'PUT',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -135,7 +135,7 @@ const MyProfile = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('/api/users/profile', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/users/profile`, {
                 method: 'DELETE',
                 headers: { 
                     'Content-Type': 'application/json',

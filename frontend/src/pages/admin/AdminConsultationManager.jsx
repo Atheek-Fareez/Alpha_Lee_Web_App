@@ -18,7 +18,7 @@ const AdminConsultationManager = () => {
     const fetchPackages = async () => {
         try {
             setLoading(true);
-            const res = await fetch('http://localhost:3000/api/consultations/packages');
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/consultations/packages`);
             if (res.ok) {
                 const data = await res.json();
                 setPackages(data);
@@ -43,7 +43,7 @@ const AdminConsultationManager = () => {
         setFormError('');
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:3000/api/consultations/packages', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/consultations/packages`, {
                 method: 'POST',
                 headers: { 
                     'Authorization': `Bearer ${token}`,
@@ -72,7 +72,7 @@ const AdminConsultationManager = () => {
         setFormError('');
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`http://localhost:3000/api/consultations/packages/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/consultations/packages/${id}`, {
                 method: 'PUT',
                 headers: { 
                     'Authorization': `Bearer ${token}`,
@@ -119,7 +119,7 @@ const AdminConsultationManager = () => {
         if (!window.confirm("Are you sure you want to permanently delete this package?")) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`http://localhost:3000/api/consultations/packages/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/consultations/packages/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });

@@ -10,7 +10,7 @@ const BlogPost = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/api/blogs/${slug}`)
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/blogs/${slug}`)
             .then(res => {
                 if(!res.ok) throw new Error("Article Offline");
                 return res.json();

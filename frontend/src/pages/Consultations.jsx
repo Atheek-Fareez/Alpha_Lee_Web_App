@@ -17,7 +17,7 @@ const Consultations = () => {
     const [status, setStatus] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/consultations/packages')
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/consultations/packages`)
             .then(res => res.json())
             .then(data => setPackages(data))
             .catch(err => console.error(err));
@@ -75,7 +75,7 @@ const Consultations = () => {
                 selectedPackage: selectedPkg
             };
 
-            const res = await fetch('http://localhost:3000/api/consultations/bookings', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/consultations/bookings`, {
                 method: 'POST',
                 headers,
                 body: JSON.stringify(formattedPayload)

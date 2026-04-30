@@ -9,7 +9,7 @@ const AdminPackageManager = () => {
     const [errors, setErrors] = useState({});
 
     const fetchPackages = () => {
-        fetch('http://localhost:3000/api/consultations/packages')
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/consultations/packages`)
             .then(res => res.json())
             .then(data => setPackages(data))
             .catch(err => console.error(err));
@@ -51,8 +51,8 @@ const AdminPackageManager = () => {
         try {
             const token = localStorage.getItem('token');
             const endpoint = editingId 
-                ? `http://localhost:3000/api/consultations/packages/${editingId}`
-                : `http://localhost:3000/api/consultations/packages`;
+                ? `${import.meta.env.VITE_API_BASE_URL}/api/consultations/packages/${editingId}`
+                : `${import.meta.env.VITE_API_BASE_URL}/api/consultations/packages`;
             const method = editingId ? 'PUT' : 'POST';
 
             const res = await fetch(endpoint, {
@@ -80,7 +80,7 @@ const AdminPackageManager = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Terminate Package?")) return;
         const token = localStorage.getItem('token');
-        await fetch(`http://localhost:3000/api/consultations/packages/${id}`, {
+        await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/consultations/packages/${id}`, {
             method: 'DELETE', headers: { 'Authorization': `Bearer ${token}` }
         });
         fetchPackages(); // TC_07: Refresh UI after delete

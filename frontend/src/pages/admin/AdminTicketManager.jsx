@@ -11,7 +11,7 @@ const AdminTicketManager = () => {
     const fetchAllTickets = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:3000/api/support/admin', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/support/admin`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (res.ok) {
@@ -44,7 +44,7 @@ const AdminTicketManager = () => {
     const updateStatus = async (id, newStatus) => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`http://localhost:3000/api/support/${id}/status`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/support/${id}/status`, {
                 method: 'PUT',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ const AdminTicketManager = () => {
         try {
             const token = localStorage.getItem('token');
             // Consolidated Update (Content + Status + Note)
-            const res = await fetch(`http://localhost:3000/api/support/${id}/admin-edit`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/support/${id}/admin-edit`, {
                 method: 'PUT',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ const AdminTicketManager = () => {
         if(!window.confirm("Permanently remove this ticket from the archives?")) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`http://localhost:3000/api/support/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/support/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });

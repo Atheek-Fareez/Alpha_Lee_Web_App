@@ -17,7 +17,7 @@ const ProgramDetail = () => {
             return;
         }
 
-        fetch(`/api/digital-programs/${id}`)
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/digital-programs/${id}`)
             .then(async (res) => {
                 if (!res.ok) {
                     const errorData = await res.json().catch(() => ({}));
@@ -41,7 +41,7 @@ const ProgramDetail = () => {
             const token = localStorage.getItem('token');
             if (token) {
                 try {
-                    await fetch('http://localhost:3000/api/users/claim', {
+                    await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/users/claim`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',

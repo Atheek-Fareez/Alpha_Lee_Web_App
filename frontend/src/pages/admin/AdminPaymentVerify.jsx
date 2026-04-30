@@ -12,7 +12,7 @@ const AdminPaymentVerify = () => {
     const fetchPayments = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('/api/payments/pending', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payments/pending`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();
@@ -30,7 +30,7 @@ const AdminPaymentVerify = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`/api/payments/${id}/approve`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payments/${id}/approve`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const AdminPaymentVerify = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`/api/payments/${id}/reject`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payments/${id}/reject`, {
                 method: 'PATCH',
                 headers: {
                     'Authorization': `Bearer ${token}`

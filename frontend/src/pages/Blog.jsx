@@ -8,7 +8,7 @@ const Blog = () => {
     const [activeFilter, setActiveFilter] = useState('All');
     
     useEffect(() => {
-        fetch('http://localhost:3000/api/blogs')
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/blogs`)
             .then(res => res.json())
             .then(data => setBlogs(data))
             .catch(err => console.error("CMS Connection Offline:", err));

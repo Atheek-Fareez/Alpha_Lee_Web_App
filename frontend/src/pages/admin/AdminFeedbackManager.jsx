@@ -10,7 +10,7 @@ const AdminFeedbackManager = () => {
     const fetchFeedback = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('/api/feedback/admin', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/feedback/admin`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (res.ok) {
@@ -38,7 +38,7 @@ const AdminFeedbackManager = () => {
                 isFeatured: isFeatured !== null ? isFeatured : current.isFeatured 
             };
 
-            const res = await fetch(`/api/feedback/${id}/moderate`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/feedback/${id}/moderate`, {
                 method: 'PUT',
                 headers: { 
                     'Content-Type': 'application/json',

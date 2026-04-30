@@ -11,7 +11,7 @@ const Register = () => {
         <div style={{ minHeight: '100dvh', backgroundColor: '#0a0a0a' }}>
             <UserAuthModal 
                 onClose={() => navigate(-1)} 
-                onSuccess={() => navigate('/locker')} 
+                onSuccess={() => navigate('/programs')} 
             />
         </div>
     );

@@ -20,7 +20,7 @@ const AdminExerciseLibrary = () => {
 
     const fetchExercises = async () => {
         try {
-            const res = await fetch('/api/exercises', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/exercises`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();
@@ -41,7 +41,7 @@ const AdminExerciseLibrary = () => {
     const handleCreate = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('/api/exercises', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/exercises`, {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const AdminExerciseLibrary = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Delete this exercise from the global library?")) return;
         try {
-            await fetch(`/api/exercises/${id}`, {
+            await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/exercises/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });

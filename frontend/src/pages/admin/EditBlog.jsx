@@ -22,7 +22,7 @@ const EditBlog = () => {
 
     useEffect(() => {
         if (isEditing) {
-            fetch(`http://localhost:3000/api/blogs/${slug}`)
+            fetch(`${import.meta.env.VITE_API_BASE_URL}/api/blogs/${slug}`)
                 .then(res => {
                     if(!res.ok) throw new Error("Article Offline");
                     return res.json();
@@ -93,7 +93,7 @@ const EditBlog = () => {
             const validBlocks = contentBlocks.filter(b => b.text.trim() !== '');
             const payload = { ...formData, content: validBlocks };
 
-            const endpoint = isEditing ? `http://localhost:3000/api/blogs/${blogId}` : 'http://localhost:3000/api/blogs';
+            const endpoint = isEditing ? `${import.meta.env.VITE_API_BASE_URL}/api/blogs/${blogId}` : `${import.meta.env.VITE_API_BASE_URL}/api/blogs`;
             const method = isEditing ? 'PUT' : 'POST';
 
             const res = await fetch(endpoint, {

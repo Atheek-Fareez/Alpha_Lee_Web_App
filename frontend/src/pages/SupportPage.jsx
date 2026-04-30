@@ -14,7 +14,7 @@ const SupportPage = () => {
         if (!isLoggedIn) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:3000/api/support', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/support`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (res.ok) {
@@ -31,7 +31,7 @@ const SupportPage = () => {
     const handleConfirmFix = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`http://localhost:3000/api/support/${id}/status`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/support/${id}/status`, {
                 method: 'PUT',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const SupportPage = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:3000/api/support', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/support`, {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',

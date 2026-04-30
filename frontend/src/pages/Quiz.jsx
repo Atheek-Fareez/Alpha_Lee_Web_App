@@ -20,7 +20,7 @@ const Quiz = () => {
     });
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/digital-programs')
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/digital-programs`)
             .then(res => res.json())
             .then(data => setDatabase(Array.isArray(data) ? data : []))
             .catch(err => console.error(err));

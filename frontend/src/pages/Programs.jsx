@@ -8,7 +8,7 @@ const Programs = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('/api/digital-programs')
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/api/digital-programs`)
             .then(res => res.json())
             .then(data => {
                 setPrograms(Array.isArray(data) ? data : []);
