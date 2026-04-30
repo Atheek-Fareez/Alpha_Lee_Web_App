@@ -3,7 +3,7 @@ import {
     createFeedback, getFeaturedFeedback,
     getAdminFeedback, moderateFeedback 
 } from "../Controllers/feedbackController.js";
-import { protect } from "../Middleware/authMiddleware.js";
+import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
