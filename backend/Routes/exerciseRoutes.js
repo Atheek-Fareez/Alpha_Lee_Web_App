@@ -1,6 +1,6 @@
 import express from 'express';
 import { getExercises, createExercise, deleteExercise } from '../Controllers/exerciseController.js';
-import { protect, isAdmin } from '../Middleware/authMiddleware.js';
+import { protect, isAdmin } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
